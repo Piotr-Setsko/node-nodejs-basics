@@ -6,10 +6,10 @@ export const transform = async () => {
     const transformStream = new Transform();
     const input = process.stdin;
     const output = process.stdout;
-    
+
     transformStream._transform = (chunk, encoding, callback) => {
       transformStream.push(chunk.toString().split('').reverse().join(''));
-      callback(); 
+      callback();
     };
 
     await pipeline(input, transformStream, output);

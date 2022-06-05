@@ -6,7 +6,7 @@ import path from 'path';
 
 export const decompress = async () => {
   try {
-    const ____dirname = path.dirname(fileURLToPath(import.meta.url))
+    const ____dirname = path.dirname(fileURLToPath(import.meta.url));
     const inputPath = path.join(____dirname, '/files/archive.gz');
     const outputPath = path.join(____dirname, '/files/fileToCompress.txt');
     const unzip = createUnzip();

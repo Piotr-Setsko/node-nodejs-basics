@@ -4,10 +4,9 @@ import path from 'path';
 
 export const copy = async () => {
   try {
-    const ____dirname = path.dirname(fileURLToPath(import.meta.url))
+    const ____dirname = path.dirname(fileURLToPath(import.meta.url));
     const pathDir = path.join(____dirname, '/files');
     const pathNewDir = path.join(____dirname, '/files_copy');
-    
     const dir = access(pathDir);
     const newDir = mkdir(pathNewDir);
     const files = readdir(pathDir);

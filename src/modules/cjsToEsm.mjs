@@ -5,26 +5,22 @@ import { readFile } from 'fs/promises';
 import './files/c.js';
 import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const random = Math.random();
 const objA = JSON.parse(
-    await readFile(
-      new URL('./files/a.json', import.meta.url)
-    )
+  await readFile(new URL('./files/a.json', import.meta.url))
 );
 const objB = JSON.parse(
-    await readFile(
-        new URL('./files/b.json', import.meta.url)
-    )
+  await readFile(new URL('./files/b.json', import.meta.url))
 );
 
 let unknownObject;
 
 if (random > 0.5) {
-    unknownObject = objA;
+  unknownObject = objA;
 } else {
-    unknownObject = objB;
+  unknownObject = objB;
 }
 
 console.log(`Release ${release()}`);
@@ -35,8 +31,7 @@ console.log(`Path to current file is ${__filename}`);
 console.log(`Path to current directory is ${__dirname}`);
 
 const createMyServer = createServerHttp((_, res) => {
-    res.end('Request accepted');
+  res.end('Request accepted');
 });
 
-export { unknownObject, createMyServer, };
-
+export { unknownObject, createMyServer };

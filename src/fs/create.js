@@ -4,7 +4,7 @@ import path from 'path';
 
 export const create = async () => {
   try {
-    const ____dirname = path.dirname(fileURLToPath(import.meta.url))
+    const ____dirname = path.dirname(fileURLToPath(import.meta.url));
     const pathFile = path.join(____dirname, '/files/fresh.txt');
 
     const content = 'I am fresh and young';

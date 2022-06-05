@@ -4,10 +4,9 @@ import path from 'path';
 
 export const rename = async () => {
   try {
-    const ____dirname = path.dirname(fileURLToPath(import.meta.url))
+    const ____dirname = path.dirname(fileURLToPath(import.meta.url));
     const oldPath = path.join(____dirname, '/files/wrongFilename.txt');
     const newPath = path.join(____dirname, '/files/properFilename.md');
-
 
     await access(newPath).then(
       () => {
