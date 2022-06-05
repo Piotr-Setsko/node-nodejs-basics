@@ -8,7 +8,7 @@ export const transform = async () => {
     const output = process.stdout;
 
     transformStream._transform = (chunk, encoding, callback) => {
-      transformStream.push(chunk.toString().split('').reverse().join(''));
+      transformStream.push(chunk.toString().split('').reverse().join('') + '\n');
       callback();
     };
 
